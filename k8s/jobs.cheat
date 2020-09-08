@@ -1,0 +1,4 @@
+% k8s jobs
+
+# Create a job from a cronjob
+kubectl create job <name> --from=<cron> -n <namespace>

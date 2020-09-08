@@ -2,3 +2,9 @@
 
 # Print GCP pubsub subscriptions
 gcloud pubsub subscriptions list --format='table[box](name)' --project=<project>
+
+# Pull GCP subscription messages & decode them
+gcloud pubsub subscriptions pull --project=<project> <subscription> --format=json --limit=10 | jq -r '.[] | .message.data | @base64d'  | jq "."
+
+$ subscription: gcloud pubsub subscriptions list --format='value(name)' --project=<project>
+
