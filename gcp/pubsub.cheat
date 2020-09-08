@@ -1,0 +1,4 @@
+% pubsub subscriptions
+
+# Print GCP pubsub subscriptions
+gcloud pubsub subscriptions list --format='table[box](name)' --project=<project>
