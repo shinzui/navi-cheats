@@ -1,0 +1,4 @@
+% git
+
+# Get git tags with dates
+git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate)%(else)%(*committerdate)%(end) %(refname:lstrip=2)' "refs/tags/*"
