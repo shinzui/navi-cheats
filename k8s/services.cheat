@@ -1,0 +1,4 @@
+% k8s services
+
+# Get all services in a namespace
+kubectl get services --sort-by=.metadata.name -n <namespace>
