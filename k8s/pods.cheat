@@ -1,4 +1,4 @@
 % k8s pods
 
 # Get the images of a pod by app label
-kgp -n <namespace> -l "app=<label>" -o  jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort |  uniq -c
+kubectl get pod -n <namespace> -l "app=<label>" -o  jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort |  uniq -c
