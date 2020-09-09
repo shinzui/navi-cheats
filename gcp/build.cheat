@@ -1,0 +1,7 @@
+% GCP cloud build
+
+# View ongoing builds
+gcloud builds list --ongoing --project=<project>
+
+# List builds with filter
+gcloud builds list --filter=<filter> --project=<project>
