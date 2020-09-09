@@ -5,3 +5,8 @@ gcloud builds list --ongoing --project=<project>
 
 # List builds with filter
 gcloud builds list --filter=<filter> --project=<project>
+
+# View log of last running builds
+gcloud builds log --project=<project> --stream <log_id>
+
+$ log_id: gcloud builds list --ongoing --project=<project>  --uri |awk -F / '{print $NF}'
