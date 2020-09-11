@@ -1,0 +1,35 @@
+% bigquery 
+
+# Get All activated agents
+bq query --project_id=<project_id> \
+'
+WITH
+  b1 AS (
+  SELECT
+    *
+  FROM
+    tan-ng-prod.tan_ng_metrics.umc_base
+  WHERE
+    date = DATE("<end_date>") ),
+  b2 AS (
+  SELECT
+    *
+  FROM
+    tan-ng-prod.tan_ng_metrics.umc_base
+  WHERE
+    date = DATE("<start_date>"))
+SELECT
+  b1.*
+FROM
+  b1
+LEFT OUTER JOIN
+  b2
+ON
+  b1.id = b2.id
+WHERE
+  b2.latest_content_added IS NULL
+  AND b1.latest_content_added IS NOT NULL'
+
+
+$ start_date: dateseq $(dateadd now -30d) 7d $(dateadd now -7d)  -f "%Y-%m-%d"
+$ end_date: dateadd now -1d -f "%Y-%m-%d"
