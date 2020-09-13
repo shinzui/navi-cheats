@@ -20,7 +20,7 @@ ON
   b1.id = b2.id
 WHERE
   b2.latest_content_added IS NULL
-  AND b1.latest_content_added IS NOT NULL' |START_DATE="<start_date>" END_DATE="<end_date>"  gomplate  | bq query --project_id=<project_id> --format=<format>
+  AND b1.latest_content_added IS NOT NULL' |START_DATE="<start_date>" END_DATE="<end_date>"  gomplate  | bq query --project_id=<project_id> --quiet --format=<format>
 
 $ start_date: dateseq $(dateadd -z "America/Los_Angeles" now -30d) 7d $(dateadd -z "America/Los_Angeles" now -7d)  -f "%Y-%m-%d"
 $ end_date: dateadd -z "America/Los_Angeles" now -1d -f "%Y-%m-%d"
