@@ -10,3 +10,9 @@ gcloud builds list --filter=<filter> --project=<project>
 gcloud builds log --project=<project> --stream <log_id>
 
 $ log_id: gcloud builds list --ongoing --project=<project>  --uri |awk -F / '{print $NF}'
+
+# View logs from today's build for a service
+gcloud builds log --project=<project> <log_id>
+
+$ today: dateconv now -f "%Y-%m-%d"
+$ log_id: gcloud builds list --filter="source.repoSource.repoName=github_topagentnetwork_<service> AND createTime >= '<today>'" --project=<project> --sort-by=createTime --format=json |jq '.[].id'
