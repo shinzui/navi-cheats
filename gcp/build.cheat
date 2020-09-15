@@ -16,3 +16,8 @@ gcloud builds log --project=<project> <log_id>
 
 $ today: dateconv now -f "%Y-%m-%d"
 $ log_id: gcloud builds list --filter="source.repoSource.repoName=github_topagentnetwork_<service> AND createTime >= '<today>'" --project=<project> --sort-by=createTime --format=json |jq '.[].id'
+
+# Run a service build on master
+gcloud alpha builds triggers run --project=<project> <build_id> --branch=master
+
+$build_id : gcloud alpha builds triggers list --project=<project> --filter="github.name=<project-repo>" --format=json | jq '.[].id'
