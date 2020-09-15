@@ -14,10 +14,10 @@ $ log_id: gcloud builds list --ongoing --project=<project>  --uri |awk -F / '{pr
 # View logs from today's build for a service
 gcloud builds log --project=<project> <log_id>
 
-$ today: dateconv now -f "%Y-%m-%d"
+$ today: dateconv -z "America/Los_Angeles" now -f "%Y-%m-%d"
 $ log_id: gcloud builds list --filter="substitutions.REPO_NAME=<repo-name> AND createTime >= '<today>'" --project=<project> --sort-by=createTime --format=json |jq '.[].id'
 
 # Run a service build on master
 gcloud alpha builds triggers run --project=<project> <build_id> --branch=master
 
-$build_id : gcloud alpha builds triggers list --project=<project> --filter="github.name=<project-repo>" --format=json | jq '.[].id'
+$build_id: gcloud alpha builds triggers list --project=<project> --filter="github.name=<project-repo>" --format=json | jq '.[].id'
