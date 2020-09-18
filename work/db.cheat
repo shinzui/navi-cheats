@@ -1,0 +1,7 @@
+% work databases
+
+# Get DB URL for cloud sql proxy and copy it to clipboard
+kubectl get secret <secret> -n <namespace> -o json | jq ".data | map_values(@base64d) | .dburl" | sd 5432 <localport> | pbcopy
+
+$ localport: echo "5433\n5435\n5437\n"
+
