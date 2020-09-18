@@ -3,7 +3,7 @@
 # Create a job from a cronjob
 kubectl create job <name> --from=cronjob/<cron> -n <namespace>
 
-$ name: { echo -n "job"; shuf -i 0-100000000 -n1}
+$ name: echo -n "job"; shuf -i 0-100000000 -n1
 $ cron: kubectl get cronjob -n <namespace> --output="jsonpath={.items[*].metadata.name}" |tr ' ' '\n'
 
 
