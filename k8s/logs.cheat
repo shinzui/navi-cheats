@@ -1,7 +1,11 @@
 % k8s logs
 
-
 # Stream the logs of a service
 kubectl logs -n <namespace> -l="app=<service>" -c <service> -f
 
 $ service: kubectl get services --sort-by=.metadata.name -n <namespace> --output="jsonpath={.items[*].metadata.name}"  | tr -s '[[:space:]]' '\n'
+
+# Stream logs of a pod
+kubectl logs -n <namespace> -l="app=<app>" --all-containers -f
+
+$ app: kubectl get pods -n <namespace> --output="jsonpath={.items[*].metadata.labels.app}" | tr -s '[[:space:]]' '\n' | uniq
