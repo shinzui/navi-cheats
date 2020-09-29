@@ -2,3 +2,7 @@
 
 # Get git tags with dates
 git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate)%(else)%(*committerdate)%(end) %(refname:lstrip=2)' "refs/tags/*"
+
+
+# Pull all top level repos under this directory
+fd --type directory --max-depth 1 --exec bash -c "cd '{}' && pwd && git pull";
