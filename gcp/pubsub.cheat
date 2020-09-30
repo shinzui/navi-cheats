@@ -8,3 +8,10 @@ gcloud pubsub subscriptions pull --project=<project> <subscription> --format=jso
 
 $ subscription: gcloud pubsub subscriptions list --format='value(name)' --project=<project>
 
+# Create a GCP subscription
+gcloud pubsub subscriptions create <name> --project=<project> --topic=<topic>
+
+$ topic: gcloud pubsub topics list --format='value(name)' --project=<project>
+
+# Delete a GCP subscription
+gcloud pubsub subscriptions delete --project=<project> <subscription>
