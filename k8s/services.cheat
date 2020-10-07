@@ -2,3 +2,11 @@
 
 # Get all services in a namespace
 kubectl get services --sort-by=.metadata.name -n <namespace>
+
+
+# Port forward to a service
+
+kubectl port-forward -n <namespace> svc/<service> <targetPort>:80
+
+$ targetPort : echo $(expr 10001 + $(shuf -i 1-100 -n 1))
+$ service:  kubectl get services --sort-by=.metadata.name -n <namespace> --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq
