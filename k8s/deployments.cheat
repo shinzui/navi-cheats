@@ -1,0 +1,12 @@
+% k8s deployments
+
+$ deployment:  kubectl get deployment --sort-by=.metadata.name -n <namespace> --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq
+
+# Scale down deployment
+
+kubectl scale --replicas 0 -n <namespace> deployment/<deployment>
+
+# Scale up service
+kubectl scale --replicas <replicas> -n <namespace> deployment/<deployment>
+
+$ replicas: 1
