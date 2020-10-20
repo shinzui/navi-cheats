@@ -15,3 +15,9 @@ $ topic: gcloud pubsub topics list --format='value(name)' --project=<project>
 
 # Delete a GCP subscription
 gcloud pubsub subscriptions delete --project=<project> <subscription>
+
+
+# Get GCP pbusub topic subscriptions
+gcloud pubsub topics list-subscriptions --project=<project> <topic>
+
+$ topic: gcloud pubsub topics list --format='value(name)' --project=<project>
