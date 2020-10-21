@@ -22,7 +22,8 @@ gcloud alpha builds triggers run --project=<project> <build_id> --branch=master
 
 $build_id: gcloud alpha builds triggers list --project=<project> --filter="github.name=<project-repo>" --format=json | jq '.[].id'
 
-
 # Find triggers that are using the old github sync method
-gcloud beta builds triggers list --project=<project> --format=json --filter="triggerTemplate:* AND -disabled:true" | jq '.[] | .triggerTemplate.repoName' 
+gcloud beta builds triggers list --project=<project> --format=json --filter="triggerTemplate:* AND -disabled:true" | jq '.[] | .triggerTemplate.repoName'
 
+#List all triggers using github app matching a filter
+gcloud alpha builds triggers list --project=<project> --filter="github.name:<filter>" --format=json
