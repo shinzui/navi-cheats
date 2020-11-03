@@ -1,7 +1,10 @@
 % pubsub subscriptions
 
-# Print GCP pubsub subscriptions
+# List all GCP pubsub subscriptions
 gcloud pubsub subscriptions list --format='table[box](name)' --project=<project>
+
+# List all GCP pubsub topics  matching filter
+gcloud pubsub topics list --format='value(name)' --project=<project> --filter="name:<filter>"
 
 # Pull GCP subscription messages & decode them
 gcloud pubsub subscriptions pull --project=<project> <subscription> --format=json --limit=10 | jq -r '.[] | .message.data | @base64d'  | jq "."
