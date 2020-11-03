@@ -1,8 +1,8 @@
 % pubsub subscriptions
 
-# List all GCP pubsub subscriptions
-gcloud pubsub subscriptions list --format='table[box](name)' --project=<project>
-
+# List all GCP pubsub subscriptions matching filter
+gcloud pubsub subscriptions list --format='value(name)' --project=<project> --filter="name:<filter>"
+ 
 # List all GCP pubsub topics  matching filter
 gcloud pubsub topics list --format='value(name)' --project=<project> --filter="name:<filter>"
 
