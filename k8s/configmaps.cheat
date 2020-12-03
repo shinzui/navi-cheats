@@ -1,0 +1,6 @@
+% k8s configmaps
+
+# Describe configmap in a namespace
+kubectl describe -n <namespace> configmaps <configmap>
+
+$ configmap: kubectl get configmaps --sort-by=.metadata.name -n test --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq
