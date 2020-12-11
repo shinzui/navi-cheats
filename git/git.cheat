@@ -6,3 +6,6 @@ git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate)%(else)%(
 
 # Pull all top level repos under this directory
 fd --type directory --max-depth 1 --exec bash -c "cd '{}' && pwd && git pull";
+
+# Delete all remote git branches matching a pattern
+git branch -r | grep <pattern> |rargs -w 4 -p 'origin/(.*)' git push origin  :{1}
