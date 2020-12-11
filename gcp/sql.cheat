@@ -1,0 +1,4 @@
+% gcp sql
+
+# List database instances
+gcloud sql instances list --project=<project>
