@@ -4,9 +4,10 @@ $ deployment:  kubectl get deployment --sort-by=.metadata.name -n <namespace> --
 
 # Scale down deployment
 
-kubectl scale --replicas 0 -n <namespace> deployment/<deployment>
+kubectl scale --replicas <replicas> -n <namespace> deployment/<deployment>
+$ deployment:  kubectl get deployment --sort-by=.metadata.name -n <namespace> --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq
 
 # Scale up service
 kubectl scale --replicas <replicas> -n <namespace> deployment/<deployment>
 
-$ replicas: 1
+$ deployment:  kubectl get deployment --sort-by=.metadata.name -n <namespace> --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq
