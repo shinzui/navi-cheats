@@ -9,3 +9,6 @@ fd --type directory --max-depth 1 --exec bash -c "cd '{}' && pwd && git pull";
 
 # Delete all remote git branches matching a pattern
 git branch -r | grep <pattern> |rargs -w 4 -p 'origin/(.*)' git push origin  :{1}
+
+# Empty commit
+git commit -m <message> --allow-empty
