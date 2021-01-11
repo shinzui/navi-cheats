@@ -15,3 +15,6 @@ git commit -m <message> --allow-empty
 
 # Get last commit sha
 git rev-parse --verify HEAD
+
+# Get repo root dir
+git rev-parse --show-toplevel
