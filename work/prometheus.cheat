@@ -1,0 +1,4 @@
+% work prometheus
+
+# Port forward to grafana dashboard
+kubectl port-forward -n monitoring svc/prometheus-operator-grafana 10099:80
