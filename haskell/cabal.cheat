@@ -1,0 +1,5 @@
+% cabal 
+
+
+# Install a package globally
+cabal install --installdir=$HOME/.local/bin --overwrite-policy=always
