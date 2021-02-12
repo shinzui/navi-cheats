@@ -20,6 +20,7 @@ $ log_id: gcloud builds list --filter="substitutions.REPO_NAME=<repo-name> AND c
 # Run a service build on master
 gcloud alpha builds triggers run --project=<project> <build_id> --branch=master
 
+$project-repo
 $build_id: gcloud alpha builds triggers list --project=<project> --filter="github.name=<project-repo>" --format=json | jq '.[].id'
 
 # Find triggers that are using the old github sync method
@@ -27,3 +28,6 @@ gcloud beta builds triggers list --project=<project> --format=json --filter="tri
 
 #List all triggers using github app matching a filter
 gcloud alpha builds triggers list --project=<project> --filter="github.name:<filter>" --format=json
+
+#Run cloud build locally
+cloud-build-local --config=cloudbuild.yaml --dryrun=false .
