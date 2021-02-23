@@ -24,3 +24,8 @@ gcloud pubsub subscriptions delete --project=<project> <subscription>
 gcloud pubsub topics list-subscriptions --project=<project> <topic>
 
 $ topic: gcloud pubsub topics list --format='value(name)' --project=<project>
+
+# Create a GCP subscription with a filter
+gcloud pubsub subscriptions create <name> --project=<project> --topic=<topic> --message-filter=<filter>
+
+$ topic: gcloud pubsub topics list --format='value(name)' --project=<project>
