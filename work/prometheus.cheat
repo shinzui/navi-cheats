@@ -2,3 +2,6 @@
 
 # Port forward to grafana dashboard
 kubectl port-forward -n monitoring svc/prometheus-operator-grafana 10099:80
+
+# Port forward to alert manager
+kubectl port-forward -n monitoring svc/prometheus-operator-alertmanager 9093:9093
