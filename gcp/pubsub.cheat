@@ -9,6 +9,10 @@ gcloud pubsub topics list --format='value(name)' --project=<project> --filter="n
 # Pull GCP subscription messages & decode them
 gcloud pubsub subscriptions pull --project=<project> <subscription> --format=json --limit=10 | jq -r '.[] | .message.data | @base64d'  | jq "."
 
+# Pull GCP subscription protobuf messages & decode them
+gcloud pubsub subscriptions pull --project=<project> <subscription> --format=json --limit=10 | jq -r '.[] | .message.data | @base64d'  | protoc --decode_raw
+
+
 $ subscription: gcloud pubsub subscriptions list --format='value(name)' --project=<project>
 
 # Create a GCP subscription
