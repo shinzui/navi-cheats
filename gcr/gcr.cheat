@@ -1,0 +1,4 @@
+% GCR
+
+# List all containers in a project for a service
+gcloud container images list-tags gcr.io/<project>/<service>
