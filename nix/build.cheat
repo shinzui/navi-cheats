@@ -1,0 +1,5 @@
+% NIX build
+
+
+# Disable remote builders
+nix build --builders '' .
