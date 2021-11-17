@@ -1,0 +1,4 @@
+% haskell tasty
+
+# Run tests matching pattern
+cabal test --test-options "-p /<pattern>/"
