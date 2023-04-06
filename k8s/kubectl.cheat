@@ -1,0 +1,5 @@
+% kubectl
+
+# set the default namespace in the current context namespace
+
+kubectl config set-context --current --namespace=<namespace>
