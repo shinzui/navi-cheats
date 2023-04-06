@@ -1,0 +1,12 @@
+% hackage
+
+# open homepage of package
+
+open -a "Google Chrome" "<url>" --args '--new-window'
+
+$ url: hoogle search --quiet --count=1 --link "+<package>" --json | jq --raw-output ".[0].url"
+
+
+# Search package
+
+hoogle search --quiet --count=1 --link "+<package>" --json | jq .
