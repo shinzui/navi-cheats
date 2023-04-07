@@ -3,4 +3,7 @@
 # Hard refresh app
 argocd app get <app> --hard-refresh
 
+# Get app
+argocd app get <app>
+
 $ app: argocd app list -o json | jq --raw-output '.[].metadata.name'
