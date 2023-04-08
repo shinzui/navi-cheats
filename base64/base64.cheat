@@ -1,0 +1,5 @@
+% base64
+
+# base64 encode
+
+echo -n "<text>" | base64
