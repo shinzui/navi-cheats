@@ -1,0 +1,14 @@
+% nix search
+
+
+# nix search haskell packages
+nix search nixpkgs#haskellPackages <package>
+
+# nix search vim plugins
+nix search nixpkgs#vimPlugins <pluginName>
+
+# nix search rust packages
+nix search nixpkgs#rustPackages <package>
+
+# nix search node packages
+nix search nixpkgs#nodePackages <package>
