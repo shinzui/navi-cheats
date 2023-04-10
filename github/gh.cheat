@@ -1,0 +1,9 @@
+% github 
+
+# Get last commit sha from remote repo
+gh api -X GET /repos/<owner>/<repo>/commits/<branch> --jq '.sha'
+
+$ branch: echo "master main" | tr ' ' '\n'
+
+# Get file content
+gh api -X GET /repos/<owner>/<repo>/contents/<filename> --header 'Accept: application/vnd.github.v3.raw'
