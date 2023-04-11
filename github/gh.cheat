@@ -7,3 +7,6 @@ $ branch: echo "master main" | tr ' ' '\n'
 
 # Get file content
 gh api -X GET /repos/<owner>/<repo>/contents/<filename> --header 'Accept: application/vnd.github.v3.raw'
+
+# Get the tags and associated commit sha of a remote repository
+gh api  'repos/<owner>/<repo>/tags?sort=semver&direction=desc' --jq '.[] | "\(.name) \(.commit.sha)"'
