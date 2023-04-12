@@ -10,3 +10,8 @@ gh api -X GET /repos/<owner>/<repo>/contents/<filename> --header 'Accept: applic
 
 # Get the tags and associated commit sha of a remote repository
 gh api  'repos/<owner>/<repo>/tags?sort=semver&direction=desc' --jq '.[] | "\(.name) \(.commit.sha)"'
+
+
+# Get recently updated repos in an organization
+gh api '/orgs/<owner>/repos?type=sources&sort=pushed&direction=desc&per_page=21' --jq  '.[] | "\u001b[1m\u001b[34m\(.name)\u001b[0m \u001b[1m@\u001b[0m\(.pushed_at|fromdateiso8601|localtime |strftime("%Y-%m-%d %H:%M:%S"))"'
+

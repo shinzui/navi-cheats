@@ -1,0 +1,8 @@
+% github permission access
+
+# Change team access permission to a repository
+echo '{"permission": "<permission>"}' | gh api -X PUT /orgs/<owner>/teams/<team_slug>/repos/<owner>/<repo> --input - -H "Accept: application/vnd.github.v3+json"
+
+$ permission: echo "pull push admin" | tr ' ' '\n'
+$ team_slug: gh api /orgs/<owner>/teams --jq '.[].slug'
+$ repo: gh api '/orgs/<owner>/repos?type=sources&sort=pushed&direction=desc&per_page=21' --jq '.[] | .name'
