@@ -1,0 +1,7 @@
+% work flagr 
+
+# Port forward to flagr on staging
+kubectl port-forward -n test svc/flagr 10800:18000
+
+# Port forward to flagr on prod
+kubectl port-forward -n prod svc/flagr 10100:18000
