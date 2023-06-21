@@ -4,7 +4,14 @@
 kubectl get pod -n <namespace> -l "app=<label>" -o  jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort |  uniq -c
 
 
+# Force delete all pods in a node
+kubectl delete pods  --grace-period=0 --force --all-namespaces --field-selector spec.nodeName=<node>
+
+$ node : kubectl get nodes -o jsonpath='{.items[*].metadata.name}' | tr -s '[[:space:]]' '\n' | uniq
+
+
 % k8s pod debugging
 
 # Produce a period-delimited tree of all keys returned for a pod with an app label. 
 kubectl get pods -o json -n <namespace> -l "app=<label>" | jq -c 'path(..)|[.[]|tostring]|join(".")'
+
