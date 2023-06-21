@@ -16,5 +16,8 @@ git commit -m <message> --allow-empty
 # Get last commit sha
 git rev-parse --verify HEAD
 
+# Get last commit sha and copy to clipboard
+git rev-parse --verify HEAD |pbcopy
+
 # Get repo root dir
 git rev-parse --show-toplevel
