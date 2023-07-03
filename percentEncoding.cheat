@@ -1,0 +1,4 @@
+% percent encoding
+
+# percent-encode (url encode)
+echo -n "<text>" | jq --slurp --raw-input --raw-output @uri
