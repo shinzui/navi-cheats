@@ -21,3 +21,6 @@ git rev-parse --verify HEAD |pbcopy
 
 # Get repo root dir
 git rev-parse --show-toplevel
+
+# Latest tag
+git describe --tags `git rev-list --tags --max-count=1`
