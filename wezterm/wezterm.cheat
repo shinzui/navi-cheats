@@ -1,0 +1,4 @@
+% wezterm
+
+# change wezterm tab title 
+wezterm cli set-tab-title <title>
