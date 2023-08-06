@@ -1,0 +1,7 @@
+% kubefwd
+
+# Forward to all services in a namespace
+sudo -E kubefwd svc -n <namespace>
+
+# Forward to a single k8s service
+sudo -E kubefwd svc -n <namespace> -f metadata.name=<service>
