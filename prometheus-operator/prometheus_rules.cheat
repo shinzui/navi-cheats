@@ -1,0 +1,6 @@
+$ prometheus alert rules
+
+# Describe a prometheus alert rule
+kubectl describe prometheusrules.monitoring.coreos.com -n <namespace> <prometheusRule>
+
+$ prometheusRule : kubectl get prometheusrules.monitoring.coreos.com -n <namespace>

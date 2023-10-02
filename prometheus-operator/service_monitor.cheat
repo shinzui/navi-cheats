@@ -1,0 +1,9 @@
+% prometheus service monitor
+
+# Describe service monitor
+kubectl describe servicemonitors.monitoring.coreos.com -n <namespace> <serviceMonitor>
+
+$ serviceMonitor : kubectl get servicemonitors.monitoring.coreos.com -n <namespace>
+
+# List all service monitors
+kubectl get servicemonitors.monitoring.coreos.com -n <namespace>
