@@ -1,0 +1,4 @@
+% k8s redis
+
+# run redis-cli in a temporary pod
+kubectl run redis-cli --rm -it --image=redis -- bash
