@@ -2,3 +2,11 @@
 
 # Port forward to argocd UI
 kubectl port-forward -n argocd svc/argocd-server 8080:80
+
+# Login to argocd
+ARGOCD_OPTS="--port-forward-namespace argocd" argocd login --port-forward
+
+
+# List argocd apps
+ARGOCD_OPTS="--port-forward-namespace argocd" argocd app list
+
