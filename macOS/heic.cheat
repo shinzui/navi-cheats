@@ -1,0 +1,4 @@
+% heic images
+
+# convert heic images to jpeg
+sips -s format jpeg <input> --out <output>
