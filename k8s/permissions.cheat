@@ -1,0 +1,7 @@
+% k8s permissions
+
+# List my permissions
+kubectl auth can-i --list
+
+# List permissions as
+kubectl auth can-i --list --as <impersonate>
