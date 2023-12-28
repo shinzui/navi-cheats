@@ -1,0 +1,7 @@
+% nix flake update
+
+# Update flake inputs from my haskell template
+nix flake update --inputs-from "github:shinzui/nix-flake-templates?dir=haskell"
+
+# Update flake inputs from my haskell 9.4 template
+nix flake update --inputs-from "github:shinzui/nix-flake-templates?dir=haskell-9_4"
