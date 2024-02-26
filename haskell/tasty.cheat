@@ -2,3 +2,6 @@
 
 # Run tests matching pattern
 cabal test --test-options "-p /<pattern>/"
+
+# Accept new golden tests
+cabal test --test-options="--accept"
