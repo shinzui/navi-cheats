@@ -1,0 +1,4 @@
+% nix system
+
+# Find current system attribute
+nix eval nixpkgs#hostPlatform.system
