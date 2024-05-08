@@ -7,6 +7,10 @@ open -a "Google Chrome" "<url>" --args '--new-window'
 $ url: hoogle search --quiet --count=1 --link "+<package>" --json | jq --raw-output ".[0].url"
 
 
-# Search package
+# Search package with hoogle
 
 hoogle search --quiet --count=1 --link "+<package>" --json | jq .
+
+# get hackage package latest version using flora
+
+xh --body GET https://flora.pm/api/experimental/packages/@hackage/<package> |  jq '{name: .package_name, latestVersion: .version, lastUpload: .uploaded_at}'
