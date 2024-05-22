@@ -1,0 +1,8 @@
+% utc time conversion
+
+
+# convert from Los Angeles time to UTC
+dateconv --from-zone="America/Los_Angeles" --zone="UTC" "<timestamp>"
+
+# convert from UTC to Los Angeles time
+dateconv --from-zone="UTC" --zone="America/Los_Angeles" "<timestamp>"
