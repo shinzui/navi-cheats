@@ -1,0 +1,4 @@
+% npm package
+
+# Get npm package description
+xh https://registry.npmjs.org/<package_name> | jq .description 
