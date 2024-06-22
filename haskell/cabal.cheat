@@ -5,7 +5,4 @@
 cabal install --installdir=$HOME/.local/bin --overwrite-policy=always
 
 # Initialize a cabal project
-<cabalInit> --libandexe 
-
-$ cabalInit: cabal init --quiet --non-interactive --minimal --author="Nadeem Bitar" --email=<email> --language=GHC2021 --tests --version="0.1.0.0" --cabal-version="3.4"
-
+cabal init --quiet --non-interactive --minimal --author="Nadeem Bitar" --email=<email> --language=GHC2021 --tests --version="0.1.0.0" --cabal-version="3.6" --libandexe 
