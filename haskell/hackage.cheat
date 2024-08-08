@@ -13,4 +13,4 @@ hoogle search --quiet --count=1 --link "+<package>" --json | jq .
 
 # get hackage package latest version using flora
 
-xh --body GET https://flora.pm/api/experimental/packages/@hackage/<package> |  jq '{name: .package_name, latestVersion: .version, lastUpload: .uploaded_at}'
+xh --body GET https://flora.pm/api/experimental/packages/@hackage/<package> |  jq '{name: .package_name, latestVersion: .version, lastUpload: .uploaded_at, homepage: .homepage}'
