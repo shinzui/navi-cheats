@@ -1,0 +1,4 @@
+% work gcp container
+
+# Get information about latest image
+ gcloud container images describe gcr.io/tan-ng/<image>:latest
