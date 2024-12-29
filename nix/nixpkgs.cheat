@@ -1,0 +1,4 @@
+% nixpkgs  nix
+
+# Get last commit date & sha on nixpkgs-unstable
+gh api repos/NixOS/nixpkgs/commits/nixpkgs-unstable --jq '.sha, .commit.committer.date'
