@@ -1,0 +1,18 @@
+% work cloudsql
+
+
+# cloud-sql-proxy staging
+cloud-sql-proxy tan-ng:us-west1:master-database  --unix-socket /tmp
+
+# cloud-sql-proxy staging2
+cloud-sql-proxy tan-ng:us-west1:master-database  --unix-socket /tmp
+
+
+#cloud-sql-proxy prod
+cloud-sql-proxy tan-ng-prod:us-west1:prod-master-database --unix-socket /tmp
+
+#cloud-sql-proxy prod2
+cloud-sql-proxy tan-ng-prod:us-west1:prod-master2-database --unix-socket /tmp
+
+#cloud-sql-proxy prod analytics
+cloud-sql-proxy tan-ng-prod:us-west1:prod-analytics-database --unix-socket /tmp
