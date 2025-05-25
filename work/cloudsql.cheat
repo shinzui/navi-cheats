@@ -5,7 +5,7 @@
 cloud-sql-proxy tan-ng:us-west1:master-database  --unix-socket /tmp
 
 # cloud-sql-proxy staging2
-cloud-sql-proxy tan-ng:us-west1:master-database  --unix-socket /tmp
+cloud-sql-proxy tan-ng:us-west1:stage-master-database  --unix-socket /tmp
 
 
 #cloud-sql-proxy prod
