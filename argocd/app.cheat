@@ -6,4 +6,7 @@ argocd app get <app> --hard-refresh
 # Get app
 argocd app get <app>
 
+# Terminate opp
+argocd app terminate-op <app>
+
 $ app: argocd app list -o json | jq --raw-output '.[].metadata.name'
