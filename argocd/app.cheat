@@ -9,4 +9,7 @@ argocd app get <app>
 # Terminate opp
 argocd app terminate-op <app>
 
+# Force sync with replace strategy
+argocd app sync <app> --replace --force
+
 $ app: argocd app list -o json | jq --raw-output '.[].metadata.name'
