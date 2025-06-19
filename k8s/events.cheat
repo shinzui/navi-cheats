@@ -1,0 +1,4 @@
+% k8s events
+
+# Get recent events in a namespace
+kubectl get events -n <namespace> --sort-by='.lastTimestamp' | tail -50
