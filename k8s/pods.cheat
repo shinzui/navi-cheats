@@ -3,7 +3,6 @@
 # Get the images of a pod by app label
 kubectl get pod -n <namespace> -l "app=<label>" -o  jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort |  uniq -c
 
-
 # Force delete all pods in a node
 kubectl delete pods  --grace-period=0 --force --all-namespaces --field-selector spec.nodeName=<node>
 

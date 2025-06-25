@@ -3,7 +3,12 @@
 # Create a job from a cronjob
 kubectl create job <name> -n <namespace> --from=cronjob/<cron>
 
+# Force delete an incomplete job
+kubectl delete -n <namespace> job <job_name> --force --grace-period=0
+
+# Get all incomplete  jobs
+kubectl get jobs -n test -o json | jq -r '.items[] | select(.status.succeeded != 1) | .metadata.name'
+
 $ name: echo -n "job"; shuf -i 0-100000000 -n1
 $ cron: kubectl get cronjob -n <namespace> --output="jsonpath={.items[*].metadata.name}" |tr ' ' '\n'
-
-
+$ job_name: kubectl get jobs -n <namespace> -o json | jq -r '.items[] | select(.status.succeeded != 1) | .metadata.name'
