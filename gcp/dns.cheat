@@ -1,0 +1,12 @@
+% gcp dns
+
+# Get managed zones in a project
+gcloud dns managed-zones list --project=<project>
+
+# Describe a managed zone
+gcloud dns managed-zones describe --project=<project> <zone>
+
+# List record sets in a managed zone
+gcloud dns record-sets list --project=<project> --zone=<zone>
+
+$ zone: gcloud dns managed-zones list --format="value(name)" --project=<project>
