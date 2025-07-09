@@ -12,4 +12,8 @@ argocd app terminate-op <app>
 # Force sync with replace strategy
 argocd app sync <app> --replace --force
 
+# Delete argocd finalizer from job to unblock
+kubectl patch job -n <namespace> <job_name> -p '{"metadata":{"finalizers":[]}}' --type merge
+
 $ app: argocd app list -o json | jq --raw-output '.[].metadata.name'
+$ job_name: kubectl get jobs -n <namespace> -o json | jq -r '.items[] | select(.status.succeeded != 1) | .metadata.name'
