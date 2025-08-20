@@ -23,3 +23,11 @@ kubectl top pods -n <namespace> --no-headers | sort -k2 -rn | head -20
 # Get top 20 pods by Memory usage
 kubectl top pods -n <namespace> --no-headers | sort -k3 -rn | head -20
 
+
+% k8s pod events
+
+# Get container restart information from a pod
+kubectl get pod -n <namespace> <pod> -o jsonpath='{range .status.containerStatuses[*]}{.name}{"\t"}{.lastState.terminated.reason}{"\t"}{.restartCount}{"\n"}{end}'
+
+$ pod: kubectl get pods -n <namespace> -o jsonpath='{.items[*].metadata.name}' | tr -s '[[:space:]]' '\n'
+
