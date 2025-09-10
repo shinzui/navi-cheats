@@ -1,0 +1,5 @@
+% unix timestamp conversion
+
+
+# convert unix timestamp (milliseconds since epoch 13 digits) to Los Angeles time
+TZ="America/Los_Angeles" date -r $((<unix_timestamp>/1000)) "+%Y-%m-%d %H:%M:%S %Z"
