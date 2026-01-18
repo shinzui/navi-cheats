@@ -3,4 +3,8 @@
 # Describe configmap in a namespace
 kubectl describe -n <namespace> configmaps <configmap>
 
+
+# Find configmaps containing the specified value
+kubectl get configmaps -n <namespace> -o json | jq -r '.items[] | select(.data) | .metadata.name as $cm | .data | to_entries[] | select(.value | contains("<filter>")) | "\($cm): \(.key)"'
+
 $ configmap: kubectl get configmaps --sort-by=.metadata.name -n test --output="jsonpath={.items[*].metadata.name}" | tr -s '[[:space:]]' '\n' | uniq

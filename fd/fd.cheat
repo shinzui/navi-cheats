@@ -1,0 +1,4 @@
+% fd
+
+# sort files by number of lines
+fd --type f -X wc -l | sort -nr
