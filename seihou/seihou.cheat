@@ -1,0 +1,13 @@
+% seihou
+
+# Install master plan skill
+seihou run --var intentions.enabled=true --commit master-plan
+
+# Install exec plan skill
+seihou run --var intentions.enabled=true --commit exec-plan
+
+# Create GitHub repo
+seihou run --var git.createGithub=true git-init
+
+# Run hackage release blueprint
+seihou agent run hackage-release
