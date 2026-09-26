@@ -7,7 +7,7 @@ seihou run --var intentions.enabled=true --commit master-plan
 seihou run --var intentions.enabled=true --commit exec-plan
 
 # Create GitHub repo
-seihou run --var git.createGithub=true git-init
+seihou run --var git.createGithub=true --commit git-init
 
 # Run hackage release blueprint
 seihou agent run hackage-release
