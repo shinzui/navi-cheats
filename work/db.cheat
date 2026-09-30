@@ -5,3 +5,13 @@ kubectl get secret <secret> -n <namespace> -o json | jq ".data | map_values(@bas
 
 $ localport: echo "5433\n5435\n5437\n"
 
+
+# Connect to staging2 db as read-only claude user (requires cloud-sql-proxy staging2)
+psql -U claude -h /tmp/tan-ng:us-west1:stage-master-database -d <staging2_database>
+
+$ staging2_database: echo "mls-service-v2"
+
+# Connect to prod2 db as read-only claude user (requires cloud-sql-proxy prod2)
+psql -U claude -h /tmp/tan-ng-prod:us-west1:prod-master2-database -d <prod2_database>
+
+$ prod2_database: echo "mls-service-v2"
