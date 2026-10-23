@@ -15,7 +15,7 @@ seihou run github-repo --var repo.parentDir="<parent_dir>" --var repo.name="<rep
 # Create a new repo under an explicit owner (new dir + git init + GitHub repo)
 seihou run github-repo --var repo.parentDir="<parent_dir>" --var repo.name="<repo_name>" --var git.githubOwner="<owner>" --var git.githubVisibility="<visibility>"
 
-$ parent_dir: echo '. ~ ~/Keikaku/bokuno ~/Work' | tr ' ' '\n'
+$ parent_dir: echo '. ~ ~/Keikaku/bokuno ~/Keikaku/work' | tr ' ' '\n'
 $ visibility: echo 'private public internal' | tr ' ' '\n'
 
 # Run hackage release blueprint
